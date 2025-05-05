@@ -1,6 +1,6 @@
 from flask import Flask
 from app.config import get_config
-from app.extensions import db, migrate, cors, spec
+from app.extensions import db, migrate, cors
 from app.admin import init_admin
 from app.controllers.example import example_bp
 from app.error_handlers import register_error_handlers
@@ -13,7 +13,6 @@ def create_app(env: str | None = None) -> Flask:
     migrate.init_app(app, db)
     cors.init_app(app)
     init_admin(app)
-    spec.init_app(app)
     
     # Register error handlers
     register_error_handlers(app)
