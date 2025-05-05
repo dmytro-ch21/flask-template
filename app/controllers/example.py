@@ -1,7 +1,6 @@
 from flask import Blueprint, request, jsonify
-from flask_apispec import doc
 from app.services.example import UserService
-from app.extensions import spec
+
 
 example_bp = Blueprint('example', __name__)
 
